@@ -50,5 +50,13 @@ table {
     End Reset 
 **********************/
 
+/* svgs */
+.notifications img {
+	height: 2rem;
+	width: 2rem;
+}
 
-
+nav img {
+	height: 3rem;
+	width: 3rem;
+}
