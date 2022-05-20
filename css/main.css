@@ -50,6 +50,12 @@ table {
     End Reset 
 **********************/
 
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: 300;
+}
+
 /* svgs */
 .notifications img {
 	height: 2rem;
@@ -60,3 +66,39 @@ nav img {
 	height: 3rem;
 	width: 3rem;
 }
+
+/* general */
+
+header {
+	display: grid;
+	align-items: center;
+	gap: 1rem;
+	padding: .5rem;
+	grid-template-columns: 35% 10% 1fr;
+	background-color: rgb(116, 119, 191);
+	color: white;
+}
+
+nav {
+	background-color: rgb(77, 76, 117);
+}
+
+nav ul {
+	display: grid;
+	text-align: center;
+	grid-template-columns: repeat(4, 1fr);
+	padding: .5rem;
+}
+
+.user {
+	display: inline-flex;
+	align-items: center;
+}
+
+.user img {
+	border-radius: 50%;
+	height: 3rem;
+	width: 3rem;
+	margin-right: .5rem;
+}
+
