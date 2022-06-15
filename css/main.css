@@ -58,13 +58,13 @@ body {
 
 /* svgs */
 .notifications img {
-	height: 2rem;
-	width: 2rem;
+	height: 1.6rem;
+	width: 1.6rem;
 }
 
 nav img {
-	height: 3rem;
-	width: 3rem;
+	height: 2.4rem;
+	width: 2.4rem;
 }
 
 /* general */
@@ -72,27 +72,46 @@ nav img {
 header {
 	display: grid;
 	align-items: center;
-	gap: 1rem;
-	padding: .5rem;
-	grid-template-columns: 35% 10% 1fr;
+	gap: .4rem;
+	padding: .8rem;
+	grid-template-columns: 38% 10% 1fr;
 	background-color: rgb(116, 119, 191);
 	color: white;
 }
 
 nav {
 	background-color: rgb(77, 76, 117);
+	padding: .7rem;
 }
 
-nav ul {
+nav ul,
+.traffic-nav {
 	display: grid;
 	text-align: center;
 	grid-template-columns: repeat(4, 1fr);
+}
+/* Check spacing later when content added */
+.traffic-nav {
+	margin-bottom: 1rem;
+}
+/* See Above */
+a {
+	text-decoration: none;
+	color: black;
+}
+/* color should only be on selected */
+.traffic-nav li a {
 	padding: .5rem;
+	color: white;
+	background-color: rgb(129, 201, 143);
+	border-radius: 20px;
 }
 
 .user {
 	display: inline-flex;
 	align-items: center;
+	border-left: solid 1px rgb(163, 163, 163);
+	padding-left: .6rem;
 }
 
 .user img {
@@ -102,3 +121,59 @@ nav ul {
 	margin-right: .5rem;
 }
 
+h1 {
+	font-size: 1.4rem;
+}
+h2 {
+	text-transform: uppercase;
+	font-size: 1.1rem;
+	margin-bottom: .9rem;
+}
+
+.sections {
+	padding: 1rem;
+	display: grid;
+	row-gap: 2rem;
+}
+.sections section {
+	border-bottom: 1px solid gray;
+}
+
+.dashboard-top {
+	display: grid;
+	grid-template-columns: 34% 1fr;
+}
+.dash-title {
+	padding: 1rem;
+}
+.dash-title h1 {
+	font-size: 1.3rem;
+}
+.dash-tab {
+	background-color: rgb(247, 247, 247);
+	border-left: 1px solid rgb(217, 217, 217);
+	border-bottom: 1px solid rgb(217, 217, 217);
+}
+
+.alert {
+	padding: 1rem;
+}
+.alert p {
+	background-color: rgb(116, 119, 191);
+	color: white;
+	padding: .8rem;
+	border-radius: 5px;
+}
+
+.social-stats {
+	height: 4rem;
+	width: 4rem;
+}
+
+/* New Members and Recent Activity Profile Photos */
+.newmbrs img,
+.mbract img {
+	border-radius: 50%;
+	height: 4.5rem;
+	width: 4.5rem;
+}

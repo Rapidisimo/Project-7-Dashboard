@@ -16,14 +16,14 @@
     <div class="wrapper">
         <header>
             <div class="logo">
-                <h2>WebApp<sup>TM</sup></h2>
+                <h1>WebApp<sup>TM</sup></h1>
             </div>
             <div class="notifications">
                 <img src="svgs/bell.svg" alt="bell">
             </div>
             <div class="user">
                 <img src="images/member-1.jpg" alt="portrait-photo">
-                <h4>Student Name</h4>
+                <p>Student Name</p>
             </div>
         </header>
         <nav>
@@ -35,37 +35,143 @@
             </ul>
         </nav>
         <main>
-            <h1>Dashboard</h1>
-            <section class="alert">
-                <h3>Alert: You have unread messages</h3>
+            <section class="dashboard-top">
+                <div class="dash-title">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="dash-tab">
+                    <!--Blank Tab-->
+                </div>
             </section>
-            <section class="traffic">
-                <h2>traffic</h2>
-            </section>
-            <section class="daily-traffic">
-                <h2>daily traffic</h2>
-            </section>
-            <section class="mobile-users">
-                <h2>mobile users</h2>
-            </section>
-            <section class="social-stats">
-                <h2>social stats</h2>
-            </section>
-            <section class="new-members">
-                <h2>new members</h2>
-            </section>
-            <section class="recent-activity">
-                <h2>recent activity</h2>
-            </section>
-            <section class="message-user">
-                <h2>message user</h2>
-            </section>
-            <section class="settings">
-                <h2>settings</h2>
-            </section>
-
+            <div class="alert" id="alert">
+                <p>Alert: You have unread messages</p>
+                <!--Temp h3-->
+            </div>
+            <div class="sections">
+                <section class="traffic">
+                    <h2>traffic</h2>
+                    <ul class="traffic-nav">
+                        <li><a href="#">Hourly</a></li>
+                        <li><a href="#">Daily</a></li>
+                        <li><a href="#">Weekly</a></li>
+                        <li><a href="#">Monthly</a></li>
+                    </ul>
+                    <div class="widgetContainer">
+                        <!-- <canvas id="traffic-chart"></canvas> -->
+                    </div>
+                </section>
+                <section class="daily-traffic">
+                    <h2>daily traffic</h2>
+                    <div class="widgetContainer">
+                        <!-- <canvas id="traffic-chart"></canvas> -->
+                    </div>
+                </section>
+                <section class="mobile-users">
+                    <h2>mobile users</h2>
+                    <div class="widgetContainer">
+                        <!-- <canvas id="traffic-chart"></canvas> -->
+                    </div>
+                </section>
+                <section class="social-stats">
+                    <h2>social stats</h2>
+                    <div class="fbStats">
+                        <!--SVG-->
+                        <div><img src="svgs/facebook.svg" alt="facebook logo"></div>
+                        <h3>Facebook</h3>
+                        <p>10,320</p>
+                    </div>
+                    <div class="igStats">
+                        <!--SVG-->
+                        <div><img src="svgs/instagram.svg" alt="facebook logo"></div>
+                        <h3>Instagram</h3>
+                        <p>16,445</p>
+                    </div>
+                    <div class="twStats">
+                        <!--SVG-->
+                        <h3>Twitter</h3>
+                        <p>22,189</p>
+                    </div>
+                </section>
+                <section class="new-members">
+                    <h2>new members</h2>
+                    <div class="newmbrs">
+                        <img src="images/member-1.jpg" alt="portrait-photo">
+                        <p>User Name</p>
+                        <a href="#">user.email@samplesite.com</a> 
+                        <p>10/15/20</p>
+                    </div>
+                    <div class="newmbrs">
+                        <img src="images/member-2.jpg" alt="portrait-photo">
+                        <p>User Name</p>
+                        <a href="#">user.email@samplesite.com</a> 
+                        <p>10/15/20</p>
+                    </div>
+                    <div class="newmbrs">
+                        <img src="images/member-3.jpg" alt="portrait-photo">
+                        <p>User Name</p>
+                        <a href="#">user.email@samplesite.com</a> 
+                        <p>10/15/20</p>
+                    </div>
+                    <div class="newmbrs">
+                        <img src="images/member-4.jpg" alt="portrait-photo">
+                        <p>User Name</p>
+                        <a href="#">user.email@samplesite.com</a> 
+                        <p>10/15/20</p>
+                    </div>
+                </section>
+                <section class="recent-activity">
+                    <h2>recent activity</h2>
+                    <div class="mbract">
+                        <img src="images/member-1.jpg" alt="portrait-photo">
+                        <p>User Name commented on inset some info here.</p>
+                        <p>4 hours ago</p>
+                    </div>
+                    <div class="mbract">
+                        <img src="images/member-2.jpg" alt="portrait-photo">
+                        <p>User Name commented on inset some info here.</p>
+                        <p>4 hours ago</p>
+                    </div>
+                    <div class="mbract">
+                        <img src="images/member-3.jpg" alt="portrait-photo">
+                        <p>User Name commented on inset some info here.</p>
+                        <p>4 hours ago</p>
+                    </div>
+                    <div class="mbract">
+                        <img src="images/member-4.jpg" alt="portrait-photo">
+                        <p>User Name commented on inset some info here.</p>
+                        <p>4 hours ago</p>
+                    </div>
+                </section>
+                <section class="message-user">
+                    <h2>message user</h2>
+                    <form action="#" method="post">
+                        <div class="formrow">
+                            <input type="text" id="user-search" name="usser-finder" placeholder="Search for User">
+                            <textarea name="msg-area" id="user-msg" cols="30" rows="5" placeholder="Message for User"></textarea>
+                            <button type="submit">SEND</button>
+                        </div>
+                    </form>
+                </section>
+                <section class="settings">
+                    <h2>settings</h2>
+                    <div class="formrow">
+                        <form action="#" method="post">
+                            <label for="email-notification">Send email Notifications</label>
+                            <input type="checkbox"  id="email-notification">
+                            <label for="profile-visibility">Set Profile to Public</label>
+                            <input type="checkbox" id="profile-visibility">
+                            <select name="timzone" id="timezones">
+                                <option value="" disabled selected hidden>Select Timezone</option>
+                                <option value="PST">Pacific Standard Time</option>
+                                <option value="EST">Eastern Standard Time</option>
+                            </select>
+                            <input type="button" value="SAVE">
+                            <input type="button" value="CANCEL">
+                        </form>
+                </div>
+                </section>
+            </div>
         </main>
-    </div>
-    
+    </div> 
 </body>
 </html>
