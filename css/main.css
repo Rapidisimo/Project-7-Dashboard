@@ -178,8 +178,6 @@ h3 {
 	border: 1px solid rgb(212, 212, 212);
 	display: grid;
 	grid-template-columns: 30% 1fr 1fr;
-	grid-template-rows: 2;
-	margin-bottom: 1rem;
 }
 
 .ss-sections p {
