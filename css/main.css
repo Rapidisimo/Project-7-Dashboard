@@ -50,6 +50,9 @@ table {
     End Reset 
 **********************/
 
+
+/* Mobile First CSS */
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1rem;
@@ -66,8 +69,6 @@ nav img {
 	height: 2.4rem;
 	width: 2.4rem;
 }
-
-/* general */
 
 header {
 	display: grid;
@@ -90,16 +91,17 @@ nav ul,
 	text-align: center;
 	grid-template-columns: repeat(4, 1fr);
 }
-/* Check spacing later when content added */
+
 .traffic-nav {
 	margin-bottom: 1rem;
 }
-/* See Above */
+
 a {
 	text-decoration: none;
 	color: black;
 }
-/* color should only be on selected */
+
+/* Temporary Look and Functionality */
 .traffic-nav li a {
 	padding: .5rem;
 	color: white;
@@ -138,13 +140,19 @@ h3 {
 .sections {
 	padding: 1rem;
 	display: grid;
-	row-gap: 2rem;
+	/* justify-items: center; */
+	row-gap: 1rem;
 }
-/* NEEDS TO GO ACROSS THE ENTIRE SCREEN */
+.sections h2 {
+	justify-self: left;
+}
+/* Used for dividing sections */
 .border {
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid rgb(224, 224, 224);
+	width: 100%;
 }
 /* ^ */
+
 .dashboard-top {
 	display: grid;
 	grid-template-columns: 34% 1fr;
@@ -170,9 +178,9 @@ h3 {
 	padding: .8rem;
 	border-radius: 5px;
 }
-
+/* Social Stats Specific */
 .ss-sections {
-	padding: .6rem;
+	padding: 1rem;
 	background-color: rgb(245, 245, 245);
 	border-radius: 5px;
 	border: 1px solid rgb(212, 212, 212);
@@ -188,37 +196,44 @@ h3 {
 
 .svg-circle {
 	background-color: rgb(116, 119, 191);
-	height: 4.5rem;
-	width: 4.5rem;
+	height: 4rem;
+	width: 4rem;
 	border-radius: 50%;
 	display: grid;
 	grid-row-end: span 2;
 }
 .social-stats svg {
-	height: 2.4rem;
-	width: 2.4rem;
+	height: 2.1rem;
+	width: 2.1rem;
 	fill: white;
 	margin: auto;
 }
-
+/* ^ */
 
 /* New Members and Recent Activity Profile Photos */
-.new-user img,
+.new-user-photo img,
 .mbr-acct img {
 	border-radius: 50%;
 	height: 4.5rem;
 	width: 4.5rem;
 }
-.new-user,
 .mbr-acct {
 	border-bottom: 1px solid rgb(215, 215, 215);
 	text-align: center;
-	line-height: 1.2;
-	padding: 1rem;
-	margin-bottom: 1rem;
 }
-.new-user a {
+.mbr-acct:nth-child(5) {
+	border-bottom: 0;
+}
+.new-members {
+	row-gap: .5rem;
+	/* align-self: center; */
+	text-align: center;
+}
+.new-user-data a {
 	color: rgb(116, 119, 191);
+}
+.mbr-acct p:nth-of-type(3) {
+	visibility: hidden;
 }
 
 .form-row {
@@ -249,10 +264,121 @@ h3 {
 	border-radius: 5px;
 	padding: .8rem;
 	font-size: 1.2rem;
+	color: rgb(204, 204, 204);
 }
+
 #button-send,
-#button-save,
-#button-cancel {
+#button-save {
 	background-color: rgb(116, 119, 191);
 	color: white;
+}
+#button-cancel {
+	background-color: rgb(153, 153, 153);
+	color: white;
+}
+
+@media screen and (min-width: 768px) {
+	
+	.notifications,
+	.user {
+		justify-self: end;
+	}
+
+	header {
+		grid-template-columns: 1fr 50% 1fr;
+	}
+
+	.dashboard-top {
+		grid-template-columns: 19% 1fr;
+	}
+	
+	nav ul {
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, 4rem);
+	}
+
+.layout {
+	display: grid;
+	grid-template-columns: 8% 1fr;
+	}
+
+	.sections {
+		row-gap: 0rem;
+	}	
+
+.traffic {
+	grid-template-columns: 1fr 1fr;
+	}
+
+.traffic-nav {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-self: end;
+	}
+
+.social-stats {
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 1rem;
+}
+.social-stats h2 {
+	grid-column-start: 1;
+	grid-column-end: span 3;
+	justify-self: start;
+}
+.ss-sections {
+	padding: .6rem;
+	grid-template-columns: repeat(3, 1fr);
+	gap: .4rem;
+}
+
+.new-members {
+	grid-template-columns: 10% 1fr 1fr;
+	align-items: center;
+	row-gap: 1rem;
+}
+.new-user-date  {
+	justify-self: end;
+}
+
+.new-members h2,
+.new-members .border {
+	grid-column-start: 1;
+	grid-column-end: span 3;
+}
+
+/* .recent-activity {
+	grid-template-columns: 1fr;
+} */
+
+/* .recent-activity h2 {
+	grid-column-start: 1;
+	grid-column-end: span 2;
+} */
+
+.mbr-acct {
+	display: grid;
+	grid-template-columns: 12% 1fr 1fr;
+	grid-template-rows: 2;
+	text-align: left;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+}
+.mbr-acct img {
+	grid-row-start: 1;
+	grid-row-end: span 2;
+}
+.mbr-acct p:nth-of-type(2) {
+	grid-row-start: 2;
+	grid-column-start: 2;
+}
+.mbr-acct p:nth-of-type(3) {
+	visibility: visible;
+	font-size: 1.8rem;
+	justify-self: right;
+	align-self: center;
+	grid-row-start: 1;
+	grid-row-end: span 2;
+}
+
+
 }
