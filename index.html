@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,9 +45,7 @@
                         <!--Blank Tab-->
                     </div>
                 </section>
-                <div class="alert" id="alert">
-                    <p>Alert: You have unread messages</p>
-                    <!--Temp h3-->
+                <div id="alert">
                 </div>
                 <div class="border">
                     <section class="traffic sections">
@@ -58,7 +57,7 @@
                             <li><a href="#">Monthly</a></li>
                         </ul>
                         <div class="widgetContainer">
-                            <!-- <canvas id="traffic-chart"></canvas> -->
+                            <canvas id="traffic-chart"></canvas>
                         </div>
                     </section>
                 </div>
@@ -66,7 +65,7 @@
                     <section class="daily-traffic sections">
                         <h2>daily traffic</h2>
                         <div class="widgetContainer">
-                            <!-- <canvas id="traffic-chart"></canvas> -->
+                            <canvas id="daily-chart"></canvas>
                         </div>
                     </section>
                 </div>
@@ -225,6 +224,7 @@
                 </div>
             </main>
         </div>
-    </div> 
+    </div>
+    <script src="js/app.js"></script>
 </body>
 </html>

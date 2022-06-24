@@ -170,14 +170,24 @@ h3 {
 }
 
 .alert {
-	padding: 1rem;
+	font-size: .9rem;
+	display: grid;
+	grid-template-columns: 90% 1fr;
+	background-color: rgb(116, 119, 191);
+	border-radius: 5px;
+	margin: 1rem;
 }
 .alert p {
-	background-color: rgb(116, 119, 191);
 	color: white;
-	padding: .8rem;
-	border-radius: 5px;
+	padding: .9rem;
 }
+.alert-close:hover {
+	cursor: pointer;
+	color: yellow;
+	font-weight: 700;
+}
+
+
 /* Social Stats Specific */
 .ss-sections {
 	padding: 1rem;
@@ -296,6 +306,11 @@ h3 {
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(4, 4rem);
 	}
+
+	.alert {
+		grid-template-columns: 94% 1fr;
+	}
+	
 
 .layout {
 	display: grid;
