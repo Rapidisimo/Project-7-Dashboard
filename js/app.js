@@ -2,6 +2,11 @@ const alertBanner = document.getElementById('alert');
 // charts
 const trafficCanvas = document.getElementById('traffic-chart');
 const dailyCanvas = document.getElementById('daily-chart');
+const mobileCanvas = document.getElementById('mobile-chart');
+// message user
+const user = document.getElementById('user-search');
+const message = document.getElementById('user-msg');
+const send = document.getElementById('button-send');
 
 
 // Generate the html for the alert banner
@@ -24,7 +29,7 @@ alertBanner.addEventListener('click', e => {
 })
 
 // Traffic Chart Data #traffic-chart
-let trafficData = {
+const trafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
 "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
@@ -35,7 +40,7 @@ let trafficData = {
     }]
 };
 // Chart Animations
-let trafficOptions = {
+const trafficOptions = {
     backgroundColor: 'rgba(112, 104, 201, .5)',
     fill: true,
     aspectRatio: 2.5,
@@ -84,3 +89,51 @@ const dailyData =  {
     data: dailyData,
     options: dailyOptions
   });
+
+//   Mobile Chart Data
+const mobileData = {
+    labels: ["Desktop", "Tablet", "Phones"],
+    datasets: [{
+      label: '# of Users',
+      data: [2000, 550, 500],
+      borderWidth: 0,
+      backgroundColor: [
+        '#7477BF',
+        '#78CF82',
+        '#51B6C8'
+  ] }]
+  };
+
+//   Mobile Legend Config
+  const mobileOptions = {
+    aspectRatio: 1.9,
+    plugins: {
+      legend: {
+        position: 'right',
+        labels: {
+          boxWidth: 20,
+          fontStyle: 'bold'
+        }
+  } }
+  };
+
+//   Mobile Chart type
+  let mobileChart = new Chart(mobileCanvas, {
+    type: 'doughnut',
+    data: mobileData,
+    options: mobileOptions
+  });
+
+  // Message User Section
+  send.addEventListener('click', () => {
+    if (user.value === "" && message.value === "") {
+        alert("Please fill out user and message fields before sending");
+    } else if (user.value === "") {
+        alert("Please fill out the USER field before sending");
+    } else if (message.value === "") {
+        alert("Please fill out the MESSAGE field before sending");
+    } else {
+        alert(`Message succesfully sent to: ${user.value}`);
+    }
+    }
+  ) 
