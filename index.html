@@ -11,11 +11,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/toggle-switch-rem.css">
     <title>Dashboard</title>
 </head>
 <body>
     <div class="wrapper">
-        <header>
+        <header id="home">
             <div class="logo">
                 <h1>WebApp<sup>TM</sup></h1>
             </div>
@@ -30,10 +31,10 @@
         <div class="layout">
             <nav>
                 <ul>
-                    <li><a href="#"><img src="svgs/home.svg" alt="house"></a></li>
-                    <li><a href="#"><img src="svgs/bar-chart.svg" alt="graph"></a></li>
-                    <li><a href="#"><img src="svgs/members.svg" alt="members"></a></li>
-                    <li><a href="#"><img src="svgs/settings.svg" alt="gear"></a></li>
+                    <li><a href="#home"><img src="svgs/home.svg" alt="house"></a></li>
+                    <li><a href="#bar-chart"><img src="svgs/bar-chart.svg" alt="graph"></a></li>
+                    <li><a href="#members"><img src="svgs/members.svg" alt="members"></a></li>
+                    <li><a href="#settings"><img src="svgs/settings.svg" alt="gear"></a></li>
                 </ul>
             </nav>
             <main>
@@ -56,26 +57,28 @@
                             <li><a href="#">Weekly</a></li>
                             <li><a href="#">Monthly</a></li>
                         </ul>
-                        <div class="widgetContainer">
+                        <div class="widgetContainer" id="traffic-container">
                             <canvas id="traffic-chart"></canvas>
                         </div>
                     </section>
                 </div>
-                <div class="border">
-                    <section class="daily-traffic sections">
-                        <h2>daily traffic</h2>
-                        <div class="widgetContainer">
-                            <canvas id="daily-chart"></canvas>
-                        </div>
-                    </section>
-                </div>
-                <div class="border">
-                    <section class="mobile-users sections">
-                        <h2>mobile users</h2>
-                        <div class="widgetContainer">
-                            <canvas id="mobile-chart"></canvas>
-                        </div>
-                    </section>
+                <div class="chart-container">
+                    <div class="border">
+                        <section class="daily-traffic sections">
+                            <h2 id="#bar-chart">daily traffic</h2>
+                            <div class="widgetContainer">
+                                <canvas id="daily-chart"></canvas>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="border">
+                        <section class="mobile-users sections">
+                            <h2>mobile users</h2>
+                            <div class="widgetContainer">
+                                <canvas id="mobile-chart"></canvas>
+                            </div>
+                        </section>
+                    </div>
                 </div>
                 <div class="border">
                     <section class="social-stats sections">
@@ -110,81 +113,83 @@
                     </section>
                 </div>
                 <div class="border">
-                    <section class="new-members sections">
-                        <h2>new members</h2>
-                        <div class="new-user-photo">
-                            <img src="images/member-1.jpg" alt="portrait-photo">
-                        </div>
-                        <div class="new-user-data">
-                            <p>Victoria Chambers</p>
-                            <a href="#">victoria.chambers80@example.com</a> 
-                        </div>
-                        <div class="new-user-date">
-                            <p>10/15/20</p>
-                        </div>
-                        <div class="border"></div>
-                        <div class="new-user-photo">
-                            <img src="images/member-2.jpg" alt="portrait-photo">
-                        </div>
-                        <div class="new-user-data">
-                            <p>Dale Byrd</p>
-                            <a href="#">dale.byrd52@example.com</a> 
-                        </div>
-                        <div class="new-user-date">
-                            <p>10/15/20</p>
-                        </div>
-                        <div class="border"></div>
-                        <div class="new-user-photo">
-                            <img src="images/member-3.jpg" alt="portrait-photo">
-                        </div>
-                        <div class="new-user-data">
-                            <p>Dawn Wood</p>
-                            <a href="#">dawn.wood16@example.com</a> 
-                        </div>
-                        <div class="new-user-date">
-                            <p>10/15/20</p>
-                        </div>
-                        <div class="border"></div>
-                        <div class="new-user-photo">
-                            <img src="images/member-4.jpg" alt="portrait-photo">
-                        </div>
-                        <div class="new-user-data">
-                            <p>Dan Oliver</p>
-                            <a href="#">dan.oliver82@example.com</a> 
-                        </div>
-                        <div class="new-user-date">
-                            <p>10/15/20</p>
-                        </div>
-                    </section>
-                </div>
-                <div class="border">
-                    <section class="recent-activity sections">
-                        <h2>recent activity</h2>
-                        <div class="mbr-acct">
-                            <img src="images/member-1.jpg" alt="portrait-photo">
-                            <p>User Name commented on inset some info here.</p>
-                            <p>4 hours ago</p>
-                            <p>></p>
-                        </div>
-                        <div class="mbr-acct">
-                            <img src="images/member-2.jpg" alt="portrait-photo">
-                            <p>User Name commented on inset some info here.</p>
-                            <p>4 hours ago</p>
-                            <p>></p>
-                        </div>
-                        <div class="mbr-acct">
-                            <img src="images/member-3.jpg" alt="portrait-photo">
-                            <p>User Name commented on inset some info here.</p>
-                            <p>4 hours ago</p>
-                            <p>></p>
-                        </div>
-                        <div class="mbr-acct">
-                            <img src="images/member-4.jpg" alt="portrait-photo">
-                            <p>User Name commented on inset some info here.</p>
-                            <p>4 hours ago</p>
-                            <p>></p>
-                        </div>
-                    </section>
+                    <div class="member-container">
+                        <section class="new-members sections">
+                            <h2 id="members">new members</h2>
+                            <div class="new-user-photo">
+                                <img src="images/member-1.jpg" alt="portrait-photo">
+                            </div>
+                            <div class="new-user-data">
+                                <p>Victoria Chambers</p>
+                                <a href="#">victoria.chambers80@example.com</a> 
+                            </div>
+                            <div class="new-user-date">
+                                <p>10/15/20</p>
+                            </div>
+                            <div class="border"></div>
+                            <div class="new-user-photo">
+                                <img src="images/member-2.jpg" alt="portrait-photo">
+                            </div>
+                            <div class="new-user-data">
+                                <p>Dale Byrd</p>
+                                <a href="#">dale.byrd52@example.com</a> 
+                            </div>
+                            <div class="new-user-date">
+                                <p>10/15/20</p>
+                            </div>
+                            <div class="border"></div>
+                            <div class="new-user-photo">
+                                <img src="images/member-3.jpg" alt="portrait-photo">
+                            </div>
+                            <div class="new-user-data">
+                                <p>Dawn Wood</p>
+                                <a href="#">dawn.wood16@example.com</a> 
+                            </div>
+                            <div class="new-user-date">
+                                <p>10/15/20</p>
+                            </div>
+                            <div class="border"></div>
+                            <div class="new-user-photo">
+                                <img src="images/member-4.jpg" alt="portrait-photo">
+                            </div>
+                            <div class="new-user-data">
+                                <p>Dan Oliver</p>
+                                <a href="#">dan.oliver82@example.com</a> 
+                            </div>
+                            <div class="new-user-date">
+                                <p>10/15/20</p>
+                            </div>
+                        </section>
+                    
+                    <div class="border">
+                        <section class="recent-activity sections">
+                            <h2>recent activity</h2>
+                            <div class="mbr-acct">
+                                <img src="images/member-1.jpg" alt="portrait-photo">
+                                <p>User Name commented on inset some info here.</p>
+                                <p>4 hours ago</p>
+                                <p>></p>
+                            </div>
+                            <div class="mbr-acct">
+                                <img src="images/member-2.jpg" alt="portrait-photo">
+                                <p>User Name commented on inset some info here.</p>
+                                <p>4 hours ago</p>
+                                <p>></p>
+                            </div>
+                            <div class="mbr-acct">
+                                <img src="images/member-3.jpg" alt="portrait-photo">
+                                <p>User Name commented on inset some info here.</p>
+                                <p>4 hours ago</p>
+                                <p>></p>
+                            </div>
+                            <div class="mbr-acct">
+                                <img src="images/member-4.jpg" alt="portrait-photo">
+                                <p>User Name commented on inset some info here.</p>
+                                <p>4 hours ago</p>
+                                <p>></p>
+                            </div>
+                        </section>
+                    </div>
                 </div>
                 <div class="border">
                     <section class="message-user sections">
@@ -200,18 +205,38 @@
                 </div>
                 <div class="border">
                     <section class="settings sections">
-                        <h2>settings</h2>
+                        <h2 id="settings">settings</h2>
                             <form action="#" method="post">
                                 <div class="form-row col-2">
-                                    <label for="email-notification" onclick="">Send email Notifications</label>
-                                    <input type="checkbox"  id="email-notification">
-                                    <label for="profile-visibility">Set Profile to Public</label>
-                                    <input type="checkbox" id="profile-visibility">
+                                    <strong>
+                                        Send Email Notifications
+                                    </strong>
+                                    <label class="switch-ios switch-light" onclick="">
+                                        <input type="checkbox" checked>         
+                                        <span>
+                                          <span>Off</span>
+                                          <span>On</span>
+                                          <a></a>
+                                        </span>
+                                      </label>
+                                      <strong>
+                                        Set Profile to Public
+                                      </strong>
+                                      <label class="switch-ios switch-light" onclick="">
+                                        <input type="checkbox" checked>                                      
+                                        <span>
+                                          <span>Off</span>
+                                          <span>On</span>
+                                          <a></a>
+                                        </span>
+                                      </label>
                                 </div>
                                 <div class="form-row">
                                     <select name="timzone" id="timezones">
                                         <option value="" disabled selected hidden>Select Timezone</option>
                                         <option value="PST">Pacific Standard Time</option>
+                                        <option value="MST">Mountain Standard Time</option>
+                                        <option value="CST">Central Standard Time</option>
                                         <option value="EST">Eastern Standard Time</option>
                                     </select>
                                 </div><br>
