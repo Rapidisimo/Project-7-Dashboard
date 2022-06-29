@@ -126,6 +126,11 @@ a {
 	width: 3rem;
 	margin-right: .5rem;
 }
+h1,
+h2,
+h3 {
+	font-weight: 400;
+}
 
 h1 {
 	font-size: 1.4rem;
@@ -137,7 +142,6 @@ h2 {
 }
 h3 {
 	font-size: 1.2rem;
-	font-weight: 400;
 	color: rgb(116, 119, 191);
 }
 
@@ -225,28 +229,29 @@ h3 {
 /* ^ */
 
 /* New Members and Recent Activity Profile Photos */
-.new-user-photo img,
-.mbr-acct img {
+.user-photo img {
 	border-radius: 50%;
 	height: 4.5rem;
 	width: 4.5rem;
 }
-.mbr-acct {
-	border-bottom: 1px solid rgb(215, 215, 215);
-	text-align: center;
-}
-.mbr-acct:nth-child(5) {
-	border-bottom: 0;
-}
+
 .new-members {
 	row-gap: .5rem;
-	/* align-self: center; */
 	text-align: center;
 }
-.new-user-data a {
+.recent-activity {
+	text-align: center;
+	row-gap: .5rem;
+}
+
+.user-data a {
 	color: rgb(116, 119, 191);
 }
-.mbr-acct p:nth-of-type(3) {
+.recent-activity .user-data a {
+	color: black;
+	font-weight: 400;
+}
+.user-arrow {
 	visibility: hidden;
 }
 
@@ -259,17 +264,15 @@ h3 {
 	grid-template-columns: 1fr 1fr;
 }
 .col-2 {
-	grid-template-columns: 70% 1fr;
-	padding: 1rem;
+	grid-template-columns: 64% 1fr;
+	padding-bottom: 1rem;
+	row-gap: 2rem;
 }
 
 .form-row label {
 	font-size: 1.2rem;
 }
 
-
-
-  
 #user-search,
 #user-msg,
 #button-send,
@@ -372,11 +375,15 @@ h3 {
 }
 
 .new-members {
-	grid-template-columns: 10% 1fr 1fr;
+	grid-template-columns: 12% 1fr 15%;
 	align-items: center;
+	text-align: left;
 	row-gap: 1rem;
 }
-.new-user-date  {
+.user-date  {
+	justify-self: end;
+}
+.user-arrow {
 	justify-self: end;
 }
 
@@ -386,30 +393,31 @@ h3 {
 	grid-column-end: span 3;
 }
 
-.mbr-acct {
-	display: grid;
-	grid-template-columns: 12% 1fr 1fr;
-	grid-template-rows: 2;
+
+.recent-activity {
+	grid-template-columns: 12% 1fr 5%;
+	align-items: center;
+	row-gap: 1rem;
+	justify-self: left;
+	border-left: 1px solid rgba(224, 224, 224, 0);
+	height: 100%;
 	text-align: left;
-	padding-bottom: 1rem;
-	margin-bottom: 1rem;
 }
-.mbr-acct img {
-	grid-row-start: 1;
-	grid-row-end: span 2;
+.recent-activity h2,
+.recent-activity .border {
+grid-column-start: 1;
+grid-column-end: span 3;
 }
-.mbr-acct p:nth-of-type(2) {
-	grid-row-start: 2;
-	grid-column-start: 2;
+.recent-activity .user-date,
+.user-arrow {
+	place-self: center;
+	font-size: 1.2rem;
 }
-.mbr-acct p:nth-of-type(3) {
+.user-arrow {
 	visibility: visible;
-	font-size: 1.8rem;
-	justify-self: right;
-	align-self: center;
-	grid-row-start: 1;
-	grid-row-end: span 2;
 }
+
+
 /* Settings Section */
 .col-2 {
 	grid-template-columns: 30% 15%;
@@ -436,16 +444,47 @@ h3 {
 	}
 	.new-members {
 		grid-template-columns: 20% 1fr 1fr;
-		grid-template-rows:auto;
-		align-items: center;
-		row-gap: 0;
-	}
-	.mbr-acct {
-		display: grid;
-		grid-template-columns: 20% 1fr 1fr;
-		grid-template-rows: 2;
+		row-gap: 1rem;
 		text-align: left;
-		padding-bottom: 1rem;
-		margin-bottom: 1rem;
+		border-right: 1px solid rgb(224, 224, 224);
+		height: 100%;
 	}
+	/* Hides border in New Members Section */
+	.utility {
+		border: 0;
+	}
+	/* Re-do of Recent Activity */
+	.recent-activity {
+		grid-template-columns: 20% 1fr 5%;
+		align-items: center;
+		row-gap: 1rem;
+		justify-self: left;
+		border-left: 1px solid rgba(224, 224, 224, 0);
+		height: 100%;
+	}
+	.recent-activity h2,
+	.recent-activity .border {
+	grid-column-start: 1;
+	grid-column-end: span 3;
+	}
+	.recent-activity .user-date,
+	.user-arrow,
+	.recent-activity .user-photo {
+		place-self: center;
+		font-size: 1.2rem;
+	}
+	.forms-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.col-2 {
+		grid-template-columns: 50% 25%;
+		row-gap: 2rem;
+		margin-bottom: 2.1rem;
+	}
+	.message-user {
+		border-right: 1px solid rgb(224, 224, 224);
+	}
+
+
 }
