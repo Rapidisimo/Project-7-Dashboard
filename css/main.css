@@ -53,10 +53,12 @@ table {
 
 /* Mobile First CSS */
 
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1rem;
 	font-weight: 300;
+	box-sizing: border-box;
 }
 sup {
 	font-size: .6rem;
@@ -154,6 +156,39 @@ h3 {
 .sections h2 {
 	justify-self: left;
 }
+/* Bell Animation Source: https://github.com/animate-css/animate.css */
+.swing {
+	transform-origin: top center;
+	animation-name: swing;
+  }
+.notifications img:hover,
+.notifications img:active {
+	animation: swing 0.5s;
+	animation-iteration-count: infinite;
+}
+@keyframes swing {
+	20% {
+	  transform: rotate3d(0, 0, 1, 15deg);
+	}
+  
+	40% {
+	  transform: rotate3d(0, 0, 1, -10deg);
+	}
+  
+	60% {
+	  transform: rotate3d(0, 0, 1, 5deg);
+	}
+  
+	80% {
+	  transform: rotate3d(0, 0, 1, -5deg);
+	}
+  
+	to {
+	  transform: rotate3d(0, 0, 1, 0deg);
+	}
+  }
+  /* ^ */
+
 /* Used for dividing sections */
 .border {
 	border-bottom: 1px solid rgb(224, 224, 224);

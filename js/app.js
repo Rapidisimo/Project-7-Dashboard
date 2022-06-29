@@ -1,3 +1,4 @@
+// purple alert banner
 const alertBanner = document.getElementById('alert');
 // charts
 const trafficCanvas = document.getElementById('traffic-chart');
@@ -7,6 +8,17 @@ const mobileCanvas = document.getElementById('mobile-chart');
 const user = document.getElementById('user-search');
 const message = document.getElementById('user-msg');
 const send = document.getElementById('button-send');
+// Notification Bell
+const bell = document.querySelector('.notifications img');
+
+// Notifications Read
+bell.addEventListener('click', () => {
+    bell.src = "svgs/bell.svg";
+    alert(`
+            1. You have 6 new messages
+            2. You have 1 new follower
+    `)
+})
 
 
 // Generate the html for the alert banner
