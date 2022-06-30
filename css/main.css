@@ -110,7 +110,11 @@ a {
 /* Temporary Look and Functionality */
 .traffic-nav li a {
 	padding: .5rem;
-	color: white;
+	color: black;
+	/* background-color: rgb(129, 201, 143);
+	border-radius: 20px; */
+}
+.traffic-menu-selected {
 	background-color: rgb(129, 201, 143);
 	border-radius: 20px;
 }

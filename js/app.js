@@ -10,6 +10,14 @@ const message = document.getElementById('user-msg');
 const send = document.getElementById('button-send');
 // Notification Bell
 const bell = document.querySelector('.notifications img');
+// Traffic Menu List a tags
+const trafficMenu = document.querySelectorAll('.traffic-nav li a');
+// Traffic Menu Items
+const trafficHourly = document.getElementById('traffic-h');
+const trafficDaily = document.getElementById('traffic-d');
+const trafficWeekly = document.getElementById('traffic-w');
+const trafficMonthly = document.getElementById('traffic-m');
+
 
 // Notifications Read
 bell.addEventListener('click', () => {
@@ -51,13 +59,14 @@ const trafficData = {
       borderWidth: 1,
     }]
 };
+
 // Chart Animations
 const trafficOptions = {
     backgroundColor: 'rgba(112, 104, 201, .5)',
     fill: true,
     aspectRatio: 2.5,
     animation: {
-      duration: 0
+      duration: 1000
     },
  scales: { y: {
         beginAtZero: true
@@ -73,6 +82,49 @@ const trafficChart = new Chart(trafficCanvas, {
     data: trafficData,
     options: trafficOptions
   });
+
+// Traffic Menu: Hourly -> Update chart with new values
+trafficHourly.addEventListener('click', () => {   
+    trafficChart.data.labels = ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+    "4-10", "11-17", "18-24", "25-31"];
+    trafficChart.data.datasets[0].data = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
+        2500];
+    trafficChart.update();
+    updateMenuClass(trafficHourly);
+})
+
+// Traffic Menu: Daily -> Update chart with new values
+trafficDaily.addEventListener('click', () => {   
+    trafficChart.data.labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    trafficChart.data.datasets[0].data = [750, 1250, 1000, 2000, 1500, 1750, 1250];
+    trafficChart.update();
+    updateMenuClass(trafficDaily);
+})
+
+// Traffic Menu: Weekly -> Update chart with new values
+trafficWeekly.addEventListener('click', () => {   
+    trafficChart.data.labels = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"];
+    trafficChart.data.datasets[0].data = [1250, 1900, 1950, 800, 1200, 2500, 2000];
+    trafficChart.update();
+    updateMenuClass(trafficWeekly);
+})
+
+// Traffic Menu: Monthly -> Update chart with new values
+trafficMonthly.addEventListener('click', () => {   
+    trafficChart.data.labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    trafficChart.data.datasets[0].data = [5000, 4000, 5500, 7000, 12000, 8000, 6000, 4000, 6000, 9000, 10000, 8000];
+    trafficChart.update();
+    updateMenuClass(trafficMonthly);
+})
+
+//remove class on menu items and highlight clicked
+function updateMenuClass (arr) {
+    
+    for (let i = 0; i < trafficMenu.length; i++) {
+        trafficMenu[i].className ='blank';
+    }
+    arr.className = 'traffic-menu-selected';
+}
 
 
 
