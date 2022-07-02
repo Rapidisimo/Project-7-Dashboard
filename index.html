@@ -216,7 +216,7 @@
                     <div class="border">
                         <section class="message-user sections">
                             <h2>message user</h2>
-                            <form action="#" method="post">
+                            <form action="#" autocomplete="off" method="">
                                 <div class="form-row">
                                     <input type="text" id="user-search" name="usser-finder" placeholder="Search for User">
                                     <textarea name="msg-area" id="user-msg" cols="26" rows="5" placeholder="Message for User"></textarea>
@@ -234,7 +234,7 @@
                                             Send Email Notifications
                                         </strong>
                                         <label class="switch-ios switch-light" onclick="">
-                                            <input type="checkbox" checked>         
+                                            <input type="checkbox" checked id="email-setting">         
                                             <span>
                                             <span>OFF</span>
                                             <span>ON</span>
@@ -245,7 +245,7 @@
                                             Set Profile to Public
                                         </strong>
                                         <label class="switch-ios switch-light" onclick="">
-                                            <input type="checkbox" checked>                                      
+                                            <input type="checkbox" checked id="profile-setting">                                      
                                             <span>
                                             <span>OFF</span>
                                             <span>ON</span>

@@ -100,6 +100,9 @@ nav ul,
 
 .traffic-nav {
 	margin-bottom: 1rem;
+	background-color: rgba(129, 201, 143, 0.594);
+	border-radius: 20px;
+	padding: .6rem;
 }
 
 a {
@@ -107,16 +110,23 @@ a {
 	color: black;
 }
 
-/* Temporary Look and Functionality */
 .traffic-nav li a {
 	padding: .5rem;
-	color: black;
-	/* background-color: rgb(129, 201, 143);
-	border-radius: 20px; */
 }
 .traffic-menu-selected {
 	background-color: rgb(129, 201, 143);
 	border-radius: 20px;
+	transition: all .2s ease-in-out;
+	color: white;
+}
+#button-save:active {
+	background-color: rgba(116, 118, 191, 0.647);
+	transform: translateY(4px);
+}
+
+#button-cancel:active {
+	background-color: rgba(49, 50, 74, 0.647);
+	transform: translateY(4px);
 }
 
 .user {

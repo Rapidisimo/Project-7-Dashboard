@@ -17,6 +17,13 @@ const trafficHourly = document.getElementById('traffic-h');
 const trafficDaily = document.getElementById('traffic-d');
 const trafficWeekly = document.getElementById('traffic-w');
 const trafficMonthly = document.getElementById('traffic-m');
+// Save Settings | Erase Settings
+const saveSettings = document.getElementById('button-save');
+const time = document.getElementById('timezones');
+const emailSetting = document.getElementById('email-setting');
+const profileSetting = document.getElementById('profile-setting');
+const eraseSettings = document.getElementById('button-cancel');
+
 
 
 // Notifications Read
@@ -201,3 +208,26 @@ const mobileData = {
     }
     }
   ) 
+
+// Save chosen settings to local storage after clicking the Save button 
+saveSettings.addEventListener('click', () => {
+    localStorage.setItem('email-setting', emailSetting.checked)
+    localStorage.setItem('profile-setting', profileSetting.checked)
+    localStorage.setItem('timezone', time.value);
+    alert('Custom settings were saved!');
+})
+
+// Erase previously save settings
+eraseSettings.addEventListener('click', () => {
+    localStorage.clear();
+    alert("Your settings were reset!");
+})
+
+// Load saved settings from localstorage
+function loadSavedSettings () {
+    emailSetting.checked = JSON.parse(localStorage.getItem('email-setting'));
+    profileSetting.checked = JSON.parse(localStorage.getItem('profile-setting'));
+    time.value = localStorage.getItem('timezone');
+}
+// Run ^ function
+loadSavedSettings();
