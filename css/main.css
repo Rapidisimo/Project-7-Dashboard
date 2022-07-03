@@ -243,6 +243,12 @@ h3 {
 	color: yellow;
 	font-weight: 700;
 }
+/* Make chart.js charts responsive */
+.widget-container-full,
+.widget-container-half {
+	width: 90vw;
+}
+
 
 
 /* Social Stats Specific */
@@ -356,13 +362,6 @@ h3 {
 	border-radius: 5px;
 }
 
-
-/* .wrapper {
-	max-width: 1280px;
-	margin-left: auto;
-	margin-right: auto;
-} */
-
 @media screen and (min-width: 768px) {
 	
 	.notifications,
@@ -410,6 +409,14 @@ h3 {
 	grid-template-columns: repeat(4, 1fr);
 	justify-self: end;
 	}
+/* Make chart.js charts responsive */
+.widget-container-full {
+	width: 90vw;
+}
+.widget-container-half {
+	width: 35vw;
+}
+/* ^ */
 
 .chart-container {
 	display: grid;
@@ -498,6 +505,16 @@ grid-column-end: span 3;
 	.alert {
 		grid-template-columns: 95% 1fr;
 	}
+
+	/* Make chart.js charts responsive */
+	.widget-container-full {
+		width: 88vw;
+	}
+	.widget-container-half {
+		width: 35vw;
+	}
+	/* ^ */
+
 
 	.member-container {
 		display: grid;
