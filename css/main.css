@@ -358,7 +358,9 @@ h3 {
 
 
 /* .wrapper {
-	max-width: 1024px;
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
 } */
 
 @media screen and (min-width: 768px) {
@@ -449,6 +451,7 @@ h3 {
 }
 .user-arrow {
 	justify-self: end;
+	visibility: visible;
 }
 
 .new-members h2,
@@ -477,10 +480,6 @@ grid-column-end: span 3;
 	place-self: center;
 	font-size: 1.2rem;
 }
-.user-arrow {
-	visibility: visible;
-}
-
 
 /* Settings Section */
 .col-2 {
@@ -519,7 +518,7 @@ grid-column-end: span 3;
 	}
 	/* Re-do of Recent Activity */
 	.recent-activity {
-		grid-template-columns: 20% 1fr 5%;
+		grid-template-columns: 1fr 1fr 1fr;
 		align-items: center;
 		row-gap: 1rem;
 		justify-self: left;
@@ -532,10 +531,12 @@ grid-column-end: span 3;
 	grid-column-end: span 3;
 	}
 	.recent-activity .user-date,
-	.user-arrow,
 	.recent-activity .user-photo {
 		place-self: center;
 		font-size: 1.2rem;
+	}
+	.user-arrow {
+		justify-self: right;
 	}
 	.forms-container {
 		display: grid;
