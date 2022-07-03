@@ -346,6 +346,17 @@ h3 {
 	color: white;
 }
 
+#results li {
+	padding: .2rem;
+}
+#results li:hover {
+	background-color: rgba(116, 118, 191, 0.647);
+	color: white;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+
 /* .wrapper {
 	max-width: 1024px;
 } */
@@ -482,7 +493,7 @@ grid-column-end: span 3;
 @media screen and (min-width: 1024px) {
 	
 	header {
-		grid-template-columns: 1fr 63% 1fr;
+		grid-template-columns: 1fr 78% 1fr;
 	}
 
 	.alert {
@@ -539,6 +550,6 @@ grid-column-end: span 3;
 		border-right: 1px solid rgb(224, 224, 224);
 		row-gap: 2rem;
 	}
-
+	
 
 }

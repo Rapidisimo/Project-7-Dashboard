@@ -21,7 +21,7 @@
                 <h1>WebApp<sup>TM</sup></h1>
             </div>
             <div class="notifications">
-                <a href="#"><img class="swing alert" src="svgs/bell-notification.svg" id="bell" alt="bell"></a>
+                <a href="#"><img class="swing" src="svgs/bell-notification.svg" id="bell" alt="bell"></a>
             </div>
             <div class="user">
                 <img src="images/member-1.jpg" alt="portrait-photo">
@@ -219,6 +219,7 @@
                             <form action="#" autocomplete="off" method="">
                                 <div class="form-row">
                                     <input type="text" id="user-search" name="usser-finder" placeholder="Search for User">
+                                    <ul id="results"></ul>
                                     <textarea name="msg-area" id="user-msg" cols="26" rows="5" placeholder="Message for User"></textarea>
                                     <button type="submit" id="button-send">SEND</button>
                                 </div>
@@ -255,7 +256,7 @@
                                     </div>
                                     <div class="form-row">
                                         <select name="timzone" id="timezones">
-                                            <option value="" disabled selected hidden>Select Timezone</option>
+                                            <option value="NONE" disabled selected hidden>Select Timezone</option>
                                             <option value="PST">Pacific Standard Time</option>
                                             <option value="MST">Mountain Standard Time</option>
                                             <option value="CST">Central Standard Time</option>

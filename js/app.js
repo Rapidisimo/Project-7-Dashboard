@@ -23,6 +23,10 @@ const time = document.getElementById('timezones');
 const emailSetting = document.getElementById('email-setting');
 const profileSetting = document.getElementById('profile-setting');
 const eraseSettings = document.getElementById('button-cancel');
+// User Messaging Section
+const userList = ["victoria chambers", "dale byrd", "dawn wood", "dan oliver"];
+const autoComplete = document.getElementById('user-search');
+const resultsHTML = document.getElementById('results');
 
 
 
@@ -220,6 +224,9 @@ saveSettings.addEventListener('click', () => {
 // Erase previously save settings
 eraseSettings.addEventListener('click', () => {
     localStorage.clear();
+    loadSavedSettings();
+    time.value = "NONE";
+    localStorage.setItem('timezone', time.value);
     alert("Your settings were reset!");
 })
 
@@ -231,3 +238,33 @@ function loadSavedSettings () {
 }
 // Run ^ function
 loadSavedSettings();
+
+// Auto Complete functionality
+autoComplete.oninput = function () {
+    let results = [];
+    const userInput = this.value;
+    resultsHTML.innerHTML = "";
+    if (userInput.length > 0) {
+        results = getResults(userInput);
+        resultsHTML.style.display = "grid";
+        for (i = 0; i < results.length; i++) {
+            resultsHTML.innerHTML += "<li>" + results[i] + "</li>";
+        }
+    }
+};
+
+function getResults(input) {
+    const results = [];
+    for (i = 0; i < userList.length; i++) {
+        if (input.toLowerCase() === userList[i].slice(0, input.length)) {
+            results.push(userList[i]);
+        }
+    }
+    return results;
+}
+
+resultsHTML.onclick = function (event) {
+    const setValue = event.target.innerText;
+    autoComplete.value = setValue;
+    this.innerHTML = "";
+};
