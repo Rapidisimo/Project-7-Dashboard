@@ -265,7 +265,7 @@
     color: #888b92; }
   .switch-ios.switch-light a {
     left: 0;
-    top: .2rem; /* JR: Vertical centering of circle switch*/
+    top: 0; /* JR: Vertical centering of circle switch*/
     width: 2rem;
     height: 2rem;
     background-color: #fff;

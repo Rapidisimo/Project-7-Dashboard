@@ -1,5 +1,5 @@
 // purple alert banner
-const alertBanner = document.getElementById('alert');
+const alertBanner = document.getElementById('alert-banner');
 // charts
 const trafficCanvas = document.getElementById('traffic-chart');
 const dailyCanvas = document.getElementById('daily-chart');
@@ -9,7 +9,7 @@ const user = document.getElementById('user-search');
 const message = document.getElementById('user-msg');
 const send = document.getElementById('button-send');
 // Notification Bell
-const bell = document.querySelector('.notifications img');
+const bell = document.querySelector('.bell');
 // Traffic Menu List a tags
 const trafficMenu = document.querySelectorAll('.traffic-nav li a');
 // Traffic Menu Items
@@ -44,8 +44,7 @@ bell.addEventListener('click', () => {
 alertBanner.innerHTML = `
     <div class="alert">
         <p>
-            <strong>Alert:</strong> You have <strong>6</strong> overdue tasks
-            to complete
+          <strong>Alert:</strong> You have unread messages
         </p>
         <p class="alert-close">X</p>
     </div>
