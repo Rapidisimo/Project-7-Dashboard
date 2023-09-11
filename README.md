@@ -1,4 +1,4 @@
-# Project-8-WebApp Dashboard
+# Project-7-WebApp Dashboard
 
 **Objective:** Build an interactive dashboard for a web application using SVG graphics and JavaScript. 
 
